@@ -4,14 +4,41 @@ require('pry-byebug')
 
 require_relative('./models/student')
 
+
+
 get '/students' do
     @students = Student.all()
     erb (:index)
 end
 
+get '/students/gryffindor' do
+    @students = Student.all()
+    erb (:gryffindor)
+end
+
+get '/students/slytherin' do
+  @students = Student.all()
+  erb (:slytherin)
+end
+
+get '/students/ravenclaw' do
+    @students = Student.all()
+    erb (:ravenclaw)
+end
+
+get '/students/hufflepuff' do
+    @students = Student.all()
+    erb (:hufflepuff)
+end
+
 get '/students/new' do
   @houses = House.all()
   erb (:new)
+end
+
+get '/students/about' do
+  @houses = House.all()
+  erb ( :about )
 end
 
 get '/students/:id' do

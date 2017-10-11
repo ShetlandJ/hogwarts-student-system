@@ -80,8 +80,7 @@ class House
      sql = "SELECT students.* FROM students WHERE house_id = $1;"
      values = [@id]
      students = SqlRunner.run(sql, values)
-     puts students
-     return students.map {|student| Student.new(student)}
+          return students.map {|student| Student.new(student)}
    end
 
 end

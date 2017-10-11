@@ -7,19 +7,28 @@
 </head>
 <body>
   <div class="menu">
-  <nav>
-    <div id="heading">
-    <ul>
-      <img src="/logo.png" alt="Logo" id="menu-image">
-      <li><a href="#">Contact us</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="/students/house">Students by House</a></li>
-      <li><a href="/students/new">Add new student</a></li>
-      <li><a href="/students">Home</a></li>
-    </ul>
-  </div>
-  </nav>
+    <nav>
+      <div id="heading">
+        <ul>
+          <img src="/logo.png" alt="Logo" id="menu-image">
+          <li><a href="/students">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="/students/new">Add new student</a></li>
+          <div class="dropdown">
+          <li><a href="/students/house" class="dropbtn">Students by House</a>
+                <div class="dropdown-content">
+                  <a href="#">Gryffindor</a>
+                  <a href="#">Slytherin</a>
+                  <a href="#">Ravenclaw</a>
+                  <a href="#">Hufflepuff</a>
+                </div>
+              </div>
+              <li><a href="#">Contact us</a></li>
+          </li>
+        </div>
+      </ul>
+    </nav>
 </div>
-  <%= yield %>
+<%= yield %>
 </body>
 </html>

@@ -1,11 +1,12 @@
 require_relative('../db/sql_runner')
+require_relative('house')
 
 class Student
 
-  attr_accessor :first_name, :last_name, :age, :house_id
+ attr_accessor :first_name, :last_name, :age, :house_id
   attr_reader :id
 
-  def initialize( options )
+ def initialize( options )
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
@@ -13,11 +14,11 @@ class Student
     @house_id = options['house_id'].to_i
   end
 
-  def student_name()
+ def student_name()
     return "#{@first_name} #{@last_name}"
   end
 
-  def save()
+ def save()
     sql = "INSERT INTO students
     (
       first_name,
@@ -35,7 +36,7 @@ class Student
     @id = student_data.first()['id'].to_i
   end
 
-  def update()
+ def update()
     sql = "UPDATE students
     SET
     (
@@ -51,21 +52,21 @@ class Student
     SqlRunner.run( sql, values )
   end
 
-  def delete()
+ def delete()
     sql = "DELETE FROM students
     WHERE id = $1"
     values = [@id]
     SqlRunner.run( sql, values )
   end
 
-  def self.delete_all()
+ def self.delete_all()
     sql = "DELETE FROM students"
     values = []
     SqlRunner.run( sql, values )
 
-  end
+ end
 
-  def self.all()
+ def self.all()
     sql = "SELECT * FROM students"
     values = []
     students = SqlRunner.run( sql, values )
@@ -73,11 +74,27 @@ class Student
     return result
   end
 
-  def self.find( id )
+ def self.find( id )
     sql = "SELECT * FROM students WHERE id = $1"
     values = [id]
     student = SqlRunner.run( sql, values )
     result = Student.new( student.first )
+    return result
+  end
+
+ def house()
+    sql = "SELECT houses.name FROM houses LEFT JOIN students ON houses.id = students.house_id WHERE students.id = $1;"
+    values = [@id]
+    houses = SqlRunner.run(sql, values)
+    result = houses.map { |house| House.new(house)  }
+    return houses[0].values.first
+  end
+
+ def self.houses()
+    sql = "SELECT houses.* FROM houses LEFT JOIN students ON houses.id = students.house_id;"
+    values = []
+    houses = SqlRunner.run(sql, values)
+    result = houses.map { |house| House.new(house)  }
     return result
   end
 

@@ -4,10 +4,10 @@
   <form action="/students/<%= @student.id %>" method="POST">
 
     <label for="firstName">First name:</label>
-    <input type="text" name="first_name" id="firstName"/ >
+    <input type="text" name="first_name" id="firstName" value="<%= @student.first_name %>"/ >
 
     <label for="lastName">Last name:</label>
-    <input type="text" name="last_name" id="lastName"/ >
+    <input type="text" name="last_name" id="lastName" value="<%= @student.last_name %>"/ >
 
     <label for="house_id"></label>
     <select name="house_id" id="house">
@@ -24,9 +24,9 @@
       </select>
 
       <label for="age">Age:</label>
-      <input type="number" min=0 max=999 name="age" id="age"/ >
+      <input type="number" min=0 max=999 name="age" id="age" value="<%= @student.age %>"/ >
 
-      <input type="submit" value="Add Student" id="btn-new-student">
+      <input type="submit" value="Edit Student Details" id="btn-new-student">
 
     </form>
   </div>

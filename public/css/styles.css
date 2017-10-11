@@ -58,10 +58,10 @@ article  {
   margin-right: 10px;
   border-radius: 5px;
 }
-
+/*
 article:nth-child(2n) {
     background: lightBlue;
-}
+}*/
 
 #btn-new-student {
   background-color: #333;

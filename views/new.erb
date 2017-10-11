@@ -7,12 +7,12 @@
     <label for="lastName">Last name:</label>
     <input type="text" name="last_name" id="lastName"/ >
 
-    <label for="<% @houses.id %>"></label>
-    <select name="<% @houses.id %>" id="house">
+    <label for="house_id"></label>
+    <select name="house_id" id="house">
       <option disabled selected value> -- select house -- </option>
       <% for house in @houses %>
-      <option>
-        <%= house.name() %>
+      <option value="<%= house.id %>">
+        <%= house.name %>
       </option>
       <% end %>
     </select>

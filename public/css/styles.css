@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  margin-left: 5px;
+  margin-left: 25px;
   margin-top: 25px;
 }
 
@@ -93,4 +93,42 @@ input {
 
 label {
   margin-top: 18px;
+}
+
+/*buttons*/
+#actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+#btn-get {
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1.15em;
+  cursor:pointer;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+#btn-edit {
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1.15em;
+  cursor:pointer;
+  height: 30px;
+}
+
+#btn-delete {
+  background-color: tomato;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1.15em;
+  cursor: pointer;
+  /*margin-top: 5px;*/
+  height: 30px;
 }

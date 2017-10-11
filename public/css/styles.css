@@ -60,3 +60,35 @@ article  {
 article:nth-child(2n) {
     background: lightBlue;
 }
+
+#btn-new-student {
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1.15em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+select {
+  height: 50px;
+}
+
+option {
+font-size: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 50px 0px 50px;
+}
+
+input {
+  height: 50px;
+}
+
+label {
+  margin-top: 18px;
+}

@@ -4,9 +4,11 @@
 <p>Last Name: <%= @student.last_name() %></p>
 <p>Age: <%= @student.age() %></p>
 <p>House: <%= @student.house() %></p>
-<a href="/students/<%= @student.id %>/edit">Edit</a>
-<form action="/students/<%= @student.id %>/delete" method="post">
-  <input type="submit" value="Delete" />
+<div id="actions">
+<form action="/students/<%= @student.id %>/edit" method="GET">
+  <input type="submit" value="Edit" id="btn-edit">
 </form>
-
+<form action="/students/<%= @student.id %>/delete" method="POST">
+  <input type="submit" value="✖ Delete" id="btn-delete">
+</form>
 </article>

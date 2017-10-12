@@ -13,22 +13,26 @@ end
 
 get '/students/gryffindor' do
     @students = Student.all()
-    erb (:gryffindor)
+    @house = "Gryffindor"
+    erb (:house)
 end
 
 get '/students/slytherin' do
   @students = Student.all()
-  erb (:slytherin)
+  @house = "Slytherin"
+  erb (:house)
 end
 
 get '/students/ravenclaw' do
     @students = Student.all()
-    erb (:ravenclaw)
+    @house = "Ravenclaw"
+    erb (:house)
 end
 
 get '/students/hufflepuff' do
     @students = Student.all()
-    erb (:hufflepuff)
+    @house = "Hufflepuff"
+    erb (:house)
 end
 
 get '/students/new' do

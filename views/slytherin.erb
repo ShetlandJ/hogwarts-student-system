@@ -1,8 +1,8 @@
+<h1>Students in Slytherin: </h1>
 <% @students.each do |student| %>
   <% if student.house() == "Slytherin" %>
   <% @name_array = [] %>
   <% @name_array << student %>
-  <h1>Students in Slytherin: <%= @name_array.count() %></h1>
 
 
   <article>
